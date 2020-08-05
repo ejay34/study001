@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+function askQuestion(question, answer){
+	var userAnswer = prompt(question);
+	userAnswer = userAnswer.toLowerCase();
+
+	for (var i = 0; i < answer.length; i++){
+		if (userAnswer == answer[i]){
+			alert("Поздравляю! Вы угадали!");
+			score++;
+			return;
+		} 
+			
+	}
+	alert("Не угадали");
+}
+
+var score = 0;
+
+askQuestion("Зимой и летом одним цветом?", ["ёлка", "ель", "елка", "елочка", "ёлочка"]);
+askQuestion("Не лает, не кусает, а в дом не пускает?", ["замок"]);
+askQuestion("Сидит дед во сто шуб одет. Кто его раздевает - тот слезы проливает?", ["лук"]);
+
+alert("Отгаданных загадок " + score + "!")
+
+</script>

@@ -1,0 +1,50 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+  
+var answer = parseInt(Math.random() * 100);
+var maxTryCount = 10;
+tryCount = 1
+
+alert("Попробуйте сыграть в паре.\nЧтобы прервать игру, введите в поле число q");
+var name1 = prompt("Как зовут первого игрока?");
+var name2 = prompt("Как зовут второго игрока?");
+
+while(true){
+//for(var tryCount = 1; tryCount <= maxTryCount; tryCount++){
+    var name1Answer = prompt(name1 + "! \nУгадайте число от 0 до 100");
+    if(name1Answer == "q"){
+        alert("Игра прервана игроком " + name1 + ". \nПравильный ответ: " + answer);
+        break;
+    }
+    name1Answer = parseInt(name1Answer);
+    if(name1Answer == answer){
+        alert(name1 + ", поздравляю! Вы угадали!");
+        break;
+    } else if(name1Answer > answer){
+        alert("Вы ввели слишком большое число.");
+    } else if(name1Answer < answer){
+        alert("Вы ввели слишком маленькое число.");
+        }
+    var name2Answer = prompt(name2 + "! \nУгадайте число от 0 до 100");
+    if(name2Answer == "q"){
+        alert("Игра прервана игроком " + name2 + ". \nПравильный ответ: " + answer);
+        break;
+    }
+    name2Answer = parseInt(name2Answer);
+    if(name2Answer == answer){
+        alert(name2 + ", поздравляю! Вы угадали!");
+        break;
+    } else if(name2Answer > answer){
+        alert("Вы ввели слишком большое число.");
+    } else if(name2Answer < answer){
+        alert("Вы ввели слишком маленькое число.");
+    } 
+    if(tryCount == maxTryCount){
+        alert("Вы проиграли!\nПравильный ответ: " + answer);
+        break;
+    }
+    alert("Попробуйте еще раз. Введите число от 1 до 100\n У вас осталось " + (maxTryCount - tryCount) +" попыток");
+    tryCount++;
+}
+
+</script>
